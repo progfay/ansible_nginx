@@ -1,0 +1,8 @@
+---
+- name: Copy nginx.conf
+  template: src=templates/nginx.conf dest=/etc/nginx/sites-available/default
+  become: yes
+
+- name: Copy index.html
+  template: src=templates/index.html dest=/usr/share/nginx/html/index.html mode=0644
+  become: yes
